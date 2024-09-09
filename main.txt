@@ -1,0 +1,48 @@
+package Interface
+
+import Interface.Interface.Circle
+import java.util.Scanner
+
+fun main() {
+    val reader = Scanner(System.`in`)
+
+    val square: Shape = Square("Square")
+    val triangle: Shape = Triangle("Triangle")
+    val circle: Shape = Circle("Circle")
+    val equilateral_triangle = EquilateralTriangle("Equilateral Triangle")
+
+    println("Enter length of Square: ")
+    var length: Double = reader.nextDouble()
+    println("Enter width of Square: ")
+    var width: Double = reader.nextDouble()
+
+    println("Enter side 1 length of Triangle: ")
+    var side1: Double = reader.nextDouble()
+    println("Enter side 2 length of Triangle: ")
+    var side2: Double = reader.nextDouble()
+    println("Enter side 3 length of Triangle: ")
+    var side3: Double = reader.nextDouble()
+    var perimeter: Double = side1 + side2 + side3
+
+    println("Enter radius of Circle: ")
+    var radius: Double = reader.nextDouble()
+
+    println("Enter side length of Equilateral Triangle: ")
+    var sidel: Double = reader.nextDouble()
+    var eqperimeter: Double = sidel * 3
+
+
+    if (length is Double && width is Double) {
+       square.setDimensions(length, width)
+    }
+    if (side1 is Double && side2 is Double && side3 is Double) {
+       triangle.setDimensions(side1, side2, side3)
+    }
+    if (radius is Double) {
+       circle.setDimensions(radius)
+    }
+    if (sidel is Double){
+        equilateral_triangle.setDimensions(sidel)
+    }
+
+}

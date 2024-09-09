@@ -1,0 +1,22 @@
+package Interface
+
+class EquilateralTriangle (_name: String) :  Triangle(_name){
+    var sidel: Double = 0.0
+    var eqperimeter: Double = 0.0
+
+    override fun setDimensions(sidel: Double) {
+        this.sidel = sidel
+        this.eqperimeter = sidel * 3
+        printDimensions()
+    }
+
+    override fun getArea(): Double {
+        var s = eqperimeter / 2
+        var r = s * (s - sidel) * (s - sidel) * (s - sidel)
+        return Math.sqrt(r)
+    }
+
+    override fun printDimensions() {
+        println("Side Length: $sidel Area: ${getArea()}")
+    }
+}

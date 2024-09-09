@@ -1,0 +1,21 @@
+package Interface
+
+abstract class Shape (_name : String) : Dimensionable {
+    var name = _name
+
+    open fun setDimensions(length: Double, width: Double) {
+
+    }
+
+    open fun setDimensions(side1: Double, side2: Double, side3: Double) {
+
+    }
+
+    open fun setDimensions(radius: Double) {
+
+    }
+
+    open fun getArea(): Double {
+        return 0.0;
+    }
+}
