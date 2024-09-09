@@ -1,0 +1,21 @@
+package Interface
+
+class Square (_name: String) :  Shape(_name){
+
+    private var length: Double = 0.0
+    private var width: Double = 0.0
+
+    override fun setDimensions(length: Double, width: Double) {
+        this.length = length
+        this.width = width
+        printDimensions()
+    }
+
+    override fun getArea(): Double {
+        return length * width
+    }
+
+    override fun printDimensions() {
+        println("Length: $length, Width: $width, Area: ${getArea()}")
+    }
+}

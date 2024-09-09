@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Main.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">Interface</span>
+
+<span class="s1">import Interface</span><span class="s2">.</span><span class="s1">Interface</span><span class="s2">.</span><span class="s1">Circle</span>
+<span class="s1">import java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span>
+
+<span class="s0">fun </span><span class="s1">main</span><span class="s2">() {</span>
+    <span class="s0">val </span><span class="s1">reader </span><span class="s2">= </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">`in`</span><span class="s2">)</span>
+
+    <span class="s0">val </span><span class="s1">square: Shape </span><span class="s2">= </span><span class="s1">Square</span><span class="s2">(</span><span class="s3">&quot;Square&quot;</span><span class="s2">)</span>
+    <span class="s0">val </span><span class="s1">triangle: Shape </span><span class="s2">= </span><span class="s1">Triangle</span><span class="s2">(</span><span class="s3">&quot;Triangle&quot;</span><span class="s2">)</span>
+    <span class="s0">val </span><span class="s1">circle: Shape </span><span class="s2">= </span><span class="s1">Circle</span><span class="s2">(</span><span class="s3">&quot;Circle&quot;</span><span class="s2">)</span>
+    <span class="s0">val </span><span class="s1">equilateral_triangle </span><span class="s2">= </span><span class="s1">EquilateralTriangle</span><span class="s2">(</span><span class="s3">&quot;Equilateral Triangle&quot;</span><span class="s2">)</span>
+
+    <span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Enter length of Square: &quot;</span><span class="s2">)</span>
+    <span class="s0">var </span><span class="s1">length: Double </span><span class="s2">= </span><span class="s1">reader</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">()</span>
+    <span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Enter width of Square: &quot;</span><span class="s2">)</span>
+    <span class="s0">var </span><span class="s1">width: Double </span><span class="s2">= </span><span class="s1">reader</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">()</span>
+
+    <span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Enter side 1 length of Triangle: &quot;</span><span class="s2">)</span>
+    <span class="s0">var </span><span class="s1">side1: Double </span><span class="s2">= </span><span class="s1">reader</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">()</span>
+    <span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Enter side 2 length of Triangle: &quot;</span><span class="s2">)</span>
+    <span class="s0">var </span><span class="s1">side2: Double </span><span class="s2">= </span><span class="s1">reader</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">()</span>
+    <span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Enter side 3 length of Triangle: &quot;</span><span class="s2">)</span>
+    <span class="s0">var </span><span class="s1">side3: Double </span><span class="s2">= </span><span class="s1">reader</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">()</span>
+    <span class="s0">var </span><span class="s1">perimeter: Double </span><span class="s2">= </span><span class="s1">side1 </span><span class="s2">+ </span><span class="s1">side2 </span><span class="s2">+ </span><span class="s1">side3</span>
+
+    <span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Enter radius of Circle: &quot;</span><span class="s2">)</span>
+    <span class="s0">var </span><span class="s1">radius: Double </span><span class="s2">= </span><span class="s1">reader</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">()</span>
+
+    <span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Enter side length of Equilateral Triangle: &quot;</span><span class="s2">)</span>
+    <span class="s0">var </span><span class="s1">sidel: Double </span><span class="s2">= </span><span class="s1">reader</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">()</span>
+    <span class="s0">var </span><span class="s1">eqperimeter: Double </span><span class="s2">= </span><span class="s1">sidel </span><span class="s2">* </span><span class="s4">3</span>
+
+
+    <span class="s0">if </span><span class="s2">(</span><span class="s1">length </span><span class="s0">is </span><span class="s1">Double </span><span class="s2">&amp;&amp; </span><span class="s1">width </span><span class="s0">is </span><span class="s1">Double</span><span class="s2">) {</span>
+       <span class="s1">square</span><span class="s2">.</span><span class="s1">setDimensions</span><span class="s2">(</span><span class="s1">length</span><span class="s2">, </span><span class="s1">width</span><span class="s2">)</span>
+    <span class="s2">}</span>
+    <span class="s0">if </span><span class="s2">(</span><span class="s1">side1 </span><span class="s0">is </span><span class="s1">Double </span><span class="s2">&amp;&amp; </span><span class="s1">side2 </span><span class="s0">is </span><span class="s1">Double </span><span class="s2">&amp;&amp; </span><span class="s1">side3 </span><span class="s0">is </span><span class="s1">Double</span><span class="s2">) {</span>
+       <span class="s1">triangle</span><span class="s2">.</span><span class="s1">setDimensions</span><span class="s2">(</span><span class="s1">side1</span><span class="s2">, </span><span class="s1">side2</span><span class="s2">, </span><span class="s1">side3</span><span class="s2">)</span>
+    <span class="s2">}</span>
+    <span class="s0">if </span><span class="s2">(</span><span class="s1">radius </span><span class="s0">is </span><span class="s1">Double</span><span class="s2">) {</span>
+       <span class="s1">circle</span><span class="s2">.</span><span class="s1">setDimensions</span><span class="s2">(</span><span class="s1">radius</span><span class="s2">)</span>
+    <span class="s2">}</span>
+    <span class="s0">if </span><span class="s2">(</span><span class="s1">sidel </span><span class="s0">is </span><span class="s1">Double</span><span class="s2">){</span>
+        <span class="s1">equilateral_triangle</span><span class="s2">.</span><span class="s1">setDimensions</span><span class="s2">(</span><span class="s1">sidel</span><span class="s2">)</span>
+    <span class="s2">}</span>
+
+<span class="s2">}</span></pre>
+</body>
+</html>

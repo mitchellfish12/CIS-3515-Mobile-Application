@@ -1,0 +1,26 @@
+package Interface
+
+open class Triangle (_name: String) :  Shape(_name){
+    private var side1: Double = 0.0
+    private var side2: Double = 0.0
+    private var side3: Double = 0.0
+    private var perimeter: Double = 0.0
+
+    override fun setDimensions(side1: Double, side2: Double, side3: Double) {
+        this.side1 = side1
+        this.side2 = side2
+        this.side3 = side3
+        this.perimeter = side1 + side2 + side3
+        printDimensions()
+    }
+
+    override fun getArea(): Double {
+        var s = perimeter / 2
+        var r = s * (s - side1) * (s - side2) * (s - side3)
+        return Math.sqrt(r)
+    }
+
+    override fun printDimensions() {
+        println("Side 1: $side1, Side 2: $side2, Side 3: $side3, Area: ${getArea()}")
+    }
+}
