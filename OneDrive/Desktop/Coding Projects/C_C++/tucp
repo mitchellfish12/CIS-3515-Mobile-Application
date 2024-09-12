@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <limits.h>
+
+void copy_directory(const char *source[], int num_sources, const char * destination) {
+    
+}
+
