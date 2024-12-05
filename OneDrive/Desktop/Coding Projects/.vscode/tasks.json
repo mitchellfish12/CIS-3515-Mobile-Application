@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: lab.c build active file",
+			"command": "c:\\Users\\mitch\\OneDrive\\Desktop\\Coding Projects\\C_C++\\lab.c",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${file}",
+				"-o",
+				"${lab.c}\\${fileBasenameNoExtension}.exe-Build and debug active file"
+			],
+			"options": {
+				"cwd": "c:\\Users\\mitch\\OneDrive\\Desktop\\Coding Projects\\C_C++"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: \"c:\\Users\\mitch\\OneDrive\\Desktop\\Coding Projects\\C_C++\\lab.c\""
+		}
+	]
+}

@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <dirent.h>
 #include <sys/stat.h>
+#include <limits.h>
 
 void copy_file(const char *source, const char *destination) {
     FILE *source_rd, *destination_rd;
@@ -11,12 +12,12 @@ void copy_file(const char *source, const char *destination) {
     source_rd = fopen(source, "r");
     destination_rd = fopen(destination, "w");
 
-    if (source_rd = NULL) {
+    if (source_rd == NULL) {
         printf("Error opening source file");
         exit(1);
     }
 
-    if (destination_rd = NULL) {
+    if (destination_rd == NULL) {
         printf("Error opening destination file");
         exit(1);
     }
@@ -35,7 +36,7 @@ void copy_file(const char *source, const char *destination) {
 
 void copy_directory(const char *source[], int num_sources, const char * destination) {
     DIR *dir = opendir(destination);
-    if (dir = NULL) {
+    if (dir == NULL) {
         printf("Error opening destination directory");
         exit(1);
     }
@@ -48,21 +49,12 @@ void copy_directory(const char *source[], int num_sources, const char * destinat
 }
 
 int main(int argc, char *argv[]) {
-    if (argc < 3) {
-        fprintf(stderr, "Usage: %s source destination\n", argv[0]);
-        exit(1);
-    }
-
+    int argc;
+    char* argv;
     struct stat stat_buffer_source;
     struct stat stat_buffer_destination;
 
-    if (stat(argv[1], &stat_buffer_source) == -1) {
-        perror("Error stat-ing source");
-        exit(1);
-    }
-
-    if (stat(argv[2], &stat_buffer_destination) == -1) {
-        perror("Error stat-ing destination");
+    if (argc < 3) {
         exit(1);
     }
 
@@ -73,9 +65,8 @@ int main(int argc, char *argv[]) {
 
     if (S_ISDIR(stat_buffer_destination.st_mode)) {
         copy_directory(argv + 1, argc - 2, argv[argc - 1]);
-    } else {
+    } else{
         copy_file(argv[1], argv[2]);
     }
-
     return 0;
 }
